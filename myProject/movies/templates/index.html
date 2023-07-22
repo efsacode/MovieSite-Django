@@ -1,0 +1,22 @@
+<h1> Home Page </h1>
+        <ul> 
+
+          {% for k in category %}
+          <li> {{ k }} </li>
+          {% endfor %}
+            
+        </ul>
+
+        <div id="movie">
+            {% for m in movie %}
+            
+                <div>
+                    <p> {{ m.title }} </p>
+                    <p> {{ m.category }} </p>
+                    <img src="{{ m.image }}" alt="image" width="200" height="200">
+
+                </div>
+            
+            {% endfor %}
+
+        </div>

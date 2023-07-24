@@ -1,21 +1,33 @@
 from django.shortcuts import render
 
 categories = [
-    "Action",
-    "Fantasy",
-    "Horror"
+    "Animation",
+    "Sci-Fi",
+    "Romantic"
 ]
 
 filmler = [
 {
     "title": "movie_1",
-    "category": "Action",
-    "image": "https://images-na.ssl-images-amazon.com/images/S/pv-target-images/bef717a48915cb3a77fe1f496b76f16b4348905237c55bb72c7ae374dbc793b8._RI_TTW_.jpg",
+    "category": "Animation",
+    "image": "1.jpg",
+    "anasayfa": True,
 },
 
-    "movie_1",
-    "movie_2",
-    "movie_3"
+{
+    "title": "movie_2",
+    "category": "Sci-Fi",
+    "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    "anasayfa": True,
+},
+
+{
+    "title": "movie_3",
+    "category": "Romantic",
+    "image": "https://upload.wikimedia.org/wikipedia/tr/thumb/8/8e/Bay_Evet.jpg/220px-Bay_Evet.jpg",
+    "anasayfa": False,
+},
+
 ]
 
 def home(request):
@@ -26,6 +38,10 @@ def home(request):
     return render(request, "index.html", data)
 
 def movies(request):
-    return render(request, "movies.html")
+    data = {
+        "category": categories, #categories listesini data sozlugune ekledik ve key tanimladik
+        "movie": filmler
+    }
+    return render(request, "movies.html",data)
 
 # Create your views here.

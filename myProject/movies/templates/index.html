@@ -1,3 +1,5 @@
+{% load static %}
+
 <h1> Home Page </h1>
         <ul> 
 
@@ -9,13 +11,17 @@
 
         <div id="movie">
             {% for m in movie %}
-            
+
+                {% if m.anasayfa %}
+
                 <div>
                     <p> {{ m.title }} </p>
                     <p> {{ m.category }} </p>
-                    <img src="{{ m.image }}" alt="image" width="200" height="200">
+                    <img src="{% static 'img/' |add:m.image %}" alt="" >
 
                 </div>
+                    
+                    {% endif %}
             
             {% endfor %}
 

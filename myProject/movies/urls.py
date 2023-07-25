@@ -6,8 +6,5 @@ urlpatterns = [ #burasi bir liste
    path("home", views.home), 
    path("movies", views.movies, name="movies"), 
    path("movies/<int:id>", views.movie_details, name="details"), 
-    
    
-    
-     
 ]

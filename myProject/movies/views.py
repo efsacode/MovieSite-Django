@@ -47,7 +47,7 @@ def movies(request):
     }
     return render(request, "movies.html",data)
 
-def movie_details(request):
+def movie_details(request, id):
     data = {
         "id": id,
     }

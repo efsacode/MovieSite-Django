@@ -7,7 +7,8 @@ categories = [
 ]
 
 filmler = [
-{
+{   
+    "id":1,
     "title": "movie_1",
     "category": "Animation",
     "image": "1.jpg",
@@ -15,16 +16,18 @@ filmler = [
 },
 
 {
+    "id":2, #id ekledik ve her bir film icin ayri ayri id tanimladik
     "title": "movie_2",
     "category": "Sci-Fi",
-    "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    "image": "2.jpg",
     "anasayfa": True,
 },
 
 {
+    "id":3,
     "title": "movie_3",
     "category": "Romantic",
-    "image": "https://upload.wikimedia.org/wikipedia/tr/thumb/8/8e/Bay_Evet.jpg/220px-Bay_Evet.jpg",
+    "image": "3.jpg",
     "anasayfa": False,
 },
 
@@ -43,5 +46,12 @@ def movies(request):
         "movie": filmler
     }
     return render(request, "movies.html",data)
+
+def movie_details(request):
+    data = {
+        "id": id,
+    }
+    return render(request, "details.html",data)
+   
 
 # Create your views here.
